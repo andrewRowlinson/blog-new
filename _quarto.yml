@@ -15,6 +15,12 @@ format:
   html:
     theme: cosmo
     css: styles.css
+    # No math in these posts. Quarto's default (mathjax) pulls MathJax AND a
+    # polyfill shim from third-party CDNs, and those scripts execute on
+    # andrewrowlinson.github.io -- the same origin as /soccerviewer/ and its
+    # cached match data. 'plain' emits neither. Re-check after a Quarto
+    # upgrade:  grep -rn "jsdelivr\|cdnjs" docs/
+    html-math-method: plain
 
 
 
